@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Screening ASCII Star Wars</title>
+</head>
+<body>
+<h1>Screening ASCII Star Wars</h1>
+
+<p><i>NB: This is not very (read: not) secure. As always, please don't hack the Gibson.</i></p>
+
+<p>As the host:</p>
+<pre>
+tmux -S /tmp/starwars new -s starwars
+chmod 777 /tmp/starwars
+</pre>
+
+<p>Then wall to let people know it's ready and they can join with:</p>
+<pre>
+tmux -S /tmp/starwars attach -t starwars
+</pre>
+
+<p>Once people have joined, start the film:</p>
+<pre>
+telnet towel.blinkenlights.nl
+</pre>
+
+<p>Enjoy! (It ends pretty early, so don't be disappointed.)</p>
+
+<h3>Cleanup</h3>
+<p>You can clean up afterwards by removing the shared socket:<p>
+<pre>rm /tmp/starwars</pre>
+</body>
